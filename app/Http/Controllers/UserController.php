@@ -18,8 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return UserResource::collection(User::all());
-        //response()->json(User::with('domicilio')->get()->toArray());
+        $data = UserResource::collection(User::all());
+        return response()->json($data);
+
     }
 
     /**
